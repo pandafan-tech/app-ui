@@ -1,0 +1,136 @@
+[
+  {
+    "name": "buy-service",
+    "path": "/buy-service",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/buy-service.vue",
+    "chunkName": "pages/buy-service",
+    "alias": "/buy-service/index.html",
+    "_name": "_ff5ed806"
+  },
+  {
+    "name": "login",
+    "path": "/login",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/login.vue",
+    "chunkName": "pages/login",
+    "alias": "/login/index.html",
+    "_name": "_c57e5e90"
+  },
+  {
+    "name": "dashboard-about",
+    "path": "/dashboard/about",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/about.vue",
+    "chunkName": "pages/dashboard/about",
+    "alias": "/dashboard/about/index.html",
+    "_name": "_0bd38061"
+  },
+  {
+    "name": "dashboard-buy-premium-data",
+    "path": "/dashboard/buy-premium-data",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/buy-premium-data.vue",
+    "chunkName": "pages/dashboard/buy-premium-data",
+    "alias": "/dashboard/buy-premium-data/index.html",
+    "_name": "_544efbba"
+  },
+  {
+    "name": "dashboard-dashboard",
+    "path": "/dashboard/dashboard",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/dashboard.vue",
+    "chunkName": "pages/dashboard/dashboard",
+    "alias": "/dashboard/dashboard/index.html",
+    "_name": "_427dade8"
+  },
+  {
+    "name": "dashboard-help",
+    "path": "/dashboard/help",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/help.vue",
+    "chunkName": "pages/dashboard/help",
+    "alias": "/dashboard/help/index.html",
+    "_name": "_37548dc6"
+  },
+  {
+    "name": "dashboard-legacy_update",
+    "path": "/dashboard/legacy_update",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/legacy_update.vue",
+    "chunkName": "pages/dashboard/legacy_update",
+    "alias": "/dashboard/legacy_update/index.html",
+    "_name": "_699b75d3"
+  },
+  {
+    "name": "dashboard-menu",
+    "path": "/dashboard/menu",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/menu.vue",
+    "chunkName": "pages/dashboard/menu",
+    "alias": "/dashboard/menu/index.html",
+    "_name": "_21287f8a"
+  },
+  {
+    "name": "dashboard-proxy-rules",
+    "path": "/dashboard/proxy-rules",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/proxy-rules.vue",
+    "chunkName": "pages/dashboard/proxy-rules",
+    "alias": "/dashboard/proxy-rules/index.html",
+    "_name": "_0b695f2c"
+  },
+  {
+    "name": "dashboard-settings",
+    "path": "/dashboard/settings",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/settings.vue",
+    "chunkName": "pages/dashboard/settings",
+    "alias": "/dashboard/settings/index.html",
+    "_name": "_5d14e2ff"
+  },
+  {
+    "name": "dashboard-update",
+    "path": "/dashboard/update",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/update.vue",
+    "chunkName": "pages/dashboard/update",
+    "alias": "/dashboard/update/index.html",
+    "_name": "_0a543da5"
+  },
+  {
+    "name": "dashboard-update_billing",
+    "path": "/dashboard/update_billing",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/update_billing.vue",
+    "chunkName": "pages/dashboard/update_billing",
+    "alias": "/dashboard/update_billing/index.html",
+    "_name": "_0d57abe1"
+  },
+  {
+    "name": "dashboard-version-history",
+    "path": "/dashboard/version-history",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/version-history.vue",
+    "chunkName": "pages/dashboard/version-history",
+    "alias": "/dashboard/version-history/index.html",
+    "_name": "_15af551a"
+  },
+  {
+    "name": "dashboard-tutorials-allplatform-android",
+    "path": "/dashboard/tutorials/allplatform/android",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/tutorials/allplatform/android.vue",
+    "chunkName": "pages/dashboard/tutorials/allplatform/android",
+    "alias": "/dashboard/tutorials/allplatform/android/index.html",
+    "_name": "_69d07a8e"
+  },
+  {
+    "name": "dashboard-tutorials-allplatform-ios",
+    "path": "/dashboard/tutorials/allplatform/ios",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/dashboard/tutorials/allplatform/ios.vue",
+    "chunkName": "pages/dashboard/tutorials/allplatform/ios",
+    "alias": "/dashboard/tutorials/allplatform/ios/index.html",
+    "_name": "_5d990ea8"
+  },
+  {
+    "name": "index",
+    "path": "/",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/index.vue",
+    "chunkName": "pages/index",
+    "alias": "/index.html",
+    "_name": "_58cda4be"
+  },
+  {
+    "name": "404_fix",
+    "path": "*",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/index.vue",
+    "_name": "_58cda4be"
+  }
+]
