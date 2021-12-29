@@ -8,6 +8,14 @@
     "_name": "_ff5ed806"
   },
   {
+    "name": "buy-service-ori",
+    "path": "/buy-service-ori",
+    "component": "/Users/hou/Documents/Projects/PandaUI/pages/buy-service-ori.vue",
+    "chunkName": "pages/buy-service-ori",
+    "alias": "/buy-service-ori/index.html",
+    "_name": "_1ec00896"
+  },
+  {
     "name": "login",
     "path": "/login",
     "component": "/Users/hou/Documents/Projects/PandaUI/pages/login.vue",

@@ -1,5 +1,5 @@
 import VueLib from 'vue'
-import merge from 'lodash.merge'
+import merge from 'lodash.mergewith'
 import * as Sentry from '@sentry/browser'
 import { Dedupe, ExtraErrorData, ReportingObserver, RewriteFrames, Vue } from '@sentry/integrations'
 
@@ -8,7 +8,7 @@ export default function (ctx, inject) {
   const config = {
     dsn:"https:\u002F\u002Fe2a8f68bbd8343b596936819d76046c2@sentry.io\u002F1300564",
     environment:"development",
-    publishRelease:true,
+    release:"",
     ignoreErrors:["EPERM","getVersion","UNKNOWN","ChunkLoadError","Loading chunk","Can't install proxy helper","StripeCheckout is not defined","ENOENT","Failed to open","Cannot create property 'billing' on string","Module.c","Error processing argument at index"]
   }
 

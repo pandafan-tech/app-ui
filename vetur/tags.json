@@ -32,11 +32,41 @@
   "Payment": {
     "description": "Auto imported from components/Payment.vue"
   },
+  "PricingPageAgreements": {
+    "description": "Auto imported from components/PricingPageAgreements.vue"
+  },
+  "PricingPageCateOptions": {
+    "description": "Auto imported from components/PricingPageCateOptions.vue"
+  },
+  "PricingPageFeeBreakdown": {
+    "description": "Auto imported from components/PricingPageFeeBreakdown.vue"
+  },
+  "PricingPagePaymentOptions": {
+    "description": "Auto imported from components/PricingPagePaymentOptions.vue"
+  },
+  "PricingPagePlanOptions": {
+    "description": "Auto imported from components/PricingPagePlanOptions.vue"
+  },
+  "PricingPagePremiumData": {
+    "description": "Auto imported from components/PricingPagePremiumData.vue"
+  },
+  "PricingPageTimeOptions": {
+    "description": "Auto imported from components/PricingPageTimeOptions.vue"
+  },
+  "PricingPageTopUp": {
+    "description": "Auto imported from components/PricingPageTopUp.vue"
+  },
   "ProxyModeSelect": {
     "description": "Auto imported from components/ProxyModeSelect.vue"
   },
+  "ServerDescription": {
+    "description": "Auto imported from components/ServerDescription.vue"
+  },
   "ServerList": {
     "description": "Auto imported from components/ServerList.vue"
+  },
+  "ServerName": {
+    "description": "Auto imported from components/ServerName.vue"
   },
   "ServiceSelect": {
     "description": "Auto imported from components/ServiceSelect.vue"

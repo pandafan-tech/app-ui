@@ -6,11 +6,13 @@ import NuxtError from '../layouts/error.vue'
 import NuxtLoading from '~/components/loading.vue'
 import NuxtBuildIndicator from './components/nuxt-build-indicator'
 
-import '../node_modules/element-ui/lib/theme-chalk/index.css'
-
 import '../assets/style/variable.sass'
 
+import '../assets/style/override_elementui.pcss'
+
 import '../assets/style/global.sass'
+
+import '../assets/style/default.pcss'
 
 import _6f6c098b from '../layouts/default.vue'
 

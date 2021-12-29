@@ -16,7 +16,9 @@ import { createStore } from './store.js'
 import nuxt_plugin_plugin_3d0d1836 from 'nuxt_plugin_plugin_3d0d1836' // Source: ./components/plugin.js (mode: 'all')
 import nuxt_plugin_sentryserver_788fcfe0 from 'nuxt_plugin_sentryserver_788fcfe0' // Source: ./sentry.server.js (mode: 'server')
 import nuxt_plugin_sentryclient_5dfea688 from 'nuxt_plugin_sentryclient_5dfea688' // Source: ./sentry.client.js (mode: 'client')
+import nuxt_plugin_vuescrollto_4d0a743d from 'nuxt_plugin_vuescrollto_4d0a743d' // Source: ./vue-scrollto.js (mode: 'client')
 import nuxt_plugin_axios_8acd3768 from 'nuxt_plugin_axios_8acd3768' // Source: ./axios.js (mode: 'all')
+import nuxt_plugin_pandautils_0ffdac8a from 'nuxt_plugin_pandautils_0ffdac8a' // Source: ../plugins/panda-utils (mode: 'all')
 import nuxt_plugin_i18n_926bd3dc from 'nuxt_plugin_i18n_926bd3dc' // Source: ../plugins/i18n (mode: 'all')
 import nuxt_plugin_elementui_d905880e from 'nuxt_plugin_elementui_d905880e' // Source: ../plugins/element-ui (mode: 'all')
 import nuxt_plugin_electronstuff_d0fabd86 from 'nuxt_plugin_electronstuff_d0fabd86' // Source: ../plugins/electron-stuff (mode: 'all')
@@ -54,7 +56,11 @@ Vue.component(Nuxt.name, Nuxt)
 
 Object.defineProperty(Vue.prototype, '$nuxt', {
   get() {
-    return this.$root.$options.$nuxt
+    const globalNuxt = this.$root.$options.$nuxt
+    if (process.client && !globalNuxt && typeof window !== 'undefined') {
+      return window.$nuxt
+    }
+    return globalNuxt
   },
   configurable: true
 })
@@ -86,7 +92,7 @@ async function createApp(ssrContext, config = {}) {
   // here we inject the router and store to all child components,
   // making them available everywhere as `this.$router` and `this.$store`.
   const app = {
-    head: {"title":"PandaFan","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Web UI for PandaFan Client"},{"name":"referrer","content":"same-origin"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
+    head: {"title":"PandaFan Client","meta":[{"charset":"utf-8"},{"name":"viewport","content":"width=device-width, initial-scale=1"},{"hid":"description","name":"description","content":"Web UI for PandaFan Client"},{"name":"referrer","content":"same-origin"}],"link":[{"rel":"icon","type":"image\u002Fx-icon","href":"\u002Ffavicon.ico"}],"style":[],"script":[]},
 
     store,
     router,
@@ -227,8 +233,16 @@ async function createApp(ssrContext, config = {}) {
     await nuxt_plugin_sentryclient_5dfea688(app.context, inject)
   }
 
+  if (process.client && typeof nuxt_plugin_vuescrollto_4d0a743d === 'function') {
+    await nuxt_plugin_vuescrollto_4d0a743d(app.context, inject)
+  }
+
   if (typeof nuxt_plugin_axios_8acd3768 === 'function') {
     await nuxt_plugin_axios_8acd3768(app.context, inject)
+  }
+
+  if (typeof nuxt_plugin_pandautils_0ffdac8a === 'function') {
+    await nuxt_plugin_pandautils_0ffdac8a(app.context, inject)
   }
 
   if (typeof nuxt_plugin_i18n_926bd3dc === 'function') {
@@ -274,26 +288,31 @@ async function createApp(ssrContext, config = {}) {
     }
   }
 
-  // If server-side, wait for async component to be resolved first
-  if (process.server && ssrContext && ssrContext.url) {
-    await new Promise((resolve, reject) => {
-      router.push(ssrContext.url, resolve, (err) => {
-        // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
-        if (!err._isRouter) return reject(err)
-        if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
+  // Wait for async component to be resolved first
+  await new Promise((resolve, reject) => {
+    const { route } = router.resolve(app.context.route.fullPath)
+    // Ignore 404s rather than blindly replacing URL
+    if (!route.matched.length && process.client) {
+      return resolve()
+    }
+    router.replace(route, resolve, (err) => {
+      // https://github.com/vuejs/vue-router/blob/v3.4.3/src/util/errors.js
+      if (!err._isRouter) return reject(err)
+      if (err.type !== 2 /* NavigationFailureType.redirected */) return resolve()
 
-        // navigated to a different route in router guard
-        const unregister = router.afterEach(async (to, from) => {
+      // navigated to a different route in router guard
+      const unregister = router.afterEach(async (to, from) => {
+        if (process.server && ssrContext && ssrContext.url) {
           ssrContext.url = to.fullPath
-          app.context.route = await getRouteData(to)
-          app.context.params = to.params || {}
-          app.context.query = to.query || {}
-          unregister()
-          resolve()
-        })
+        }
+        app.context.route = await getRouteData(to)
+        app.context.params = to.params || {}
+        app.context.query = to.query || {}
+        unregister()
+        resolve()
       })
     })
-  }
+  })
 
   return {
     store,

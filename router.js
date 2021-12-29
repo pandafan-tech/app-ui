@@ -5,6 +5,7 @@ import { interopDefault } from './utils'
 import scrollBehavior from './router.scrollBehavior.js'
 
 const _ff5ed806 = () => interopDefault(import('../pages/buy-service.vue' /* webpackChunkName: "pages/buy-service" */))
+const _1ec00896 = () => interopDefault(import('../pages/buy-service-ori.vue' /* webpackChunkName: "pages/buy-service-ori" */))
 const _c57e5e90 = () => interopDefault(import('../pages/login.vue' /* webpackChunkName: "pages/login" */))
 const _0bd38061 = () => interopDefault(import('../pages/dashboard/about.vue' /* webpackChunkName: "pages/dashboard/about" */))
 const _544efbba = () => interopDefault(import('../pages/dashboard/buy-premium-data.vue' /* webpackChunkName: "pages/dashboard/buy-premium-data" */))
@@ -37,6 +38,11 @@ export const routerOptions = {
     component: _ff5ed806,
     alias: "/buy-service/index.html",
     name: "buy-service"
+  }, {
+    path: "/buy-service-ori",
+    component: _1ec00896,
+    alias: "/buy-service-ori/index.html",
+    name: "buy-service-ori"
   }, {
     path: "/login",
     component: _c57e5e90,
@@ -122,7 +128,7 @@ export const routerOptions = {
 }
 
 export function createRouter (ssrContext, config) {
-  const base = (config.app && config.app.basePath) || routerOptions.base
+  const base = (config._app && config._app.basePath) || routerOptions.base
   const router = new Router({ ...routerOptions, base  })
 
   // TODO: remove in Nuxt 3
